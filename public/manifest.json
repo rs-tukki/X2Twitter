@@ -1,0 +1,13 @@
+{
+  "name": "X2Twitter",
+  "description": "X change to Twitter.",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/script.js"],
+      "all_frames": true
+    }
+  ]
+}
