@@ -32,15 +32,13 @@ const replaceTextOnPage: ((from: string | RegExp, to: string) => void) = functio
   const elements = document.querySelectorAll('body, body *:not(script):not(noscript):not(style)');
 
   elements.forEach((element) => {
-    if (element.childNodes.length) {
-      element.childNodes.forEach((node) => {
-        if (node.nodeType === Node.TEXT_NODE) {
-          if (node.textContent) {
-            node.textContent = node.textContent.replace(from, to);
-          }
+    element.childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        if (node.textContent) {
+          node.textContent = node.textContent.replace(from, to);
         }
-      });
-    }
+      }
+    });
   });
 }
 
